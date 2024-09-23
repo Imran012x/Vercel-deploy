@@ -2,10 +2,11 @@ import openai  # Import OpenAI library for interacting with the GPT model
 import PyPDF2  # Import PyPDF2 for reading PDF files
 import streamlit as st  # Import Streamlit for creating the web app
 
-# Setup OpenAI API Key
-openai.api_key = 
+import os  # Import os for accessing environment variables
 
-# Replace with your actual OpenAI API key
+# Setup OpenAI API Key
+openai.api_key = os.getenv('OPENAI_API_KEY')  # Use the environment variable for the API key
+
 
 # Function to read PDF and extract text
 def read_pdf(file_path):
